@@ -21,17 +21,17 @@
                     @method('PUT')
                     <div class="row">
                         <div class="col-12">
-                            <label class="control-label">Nome Progetto</label>
+                            <label class="control-label">Nome progetto</label>
                             <input type="text" name="name" class="form-control form-control-sm"
                                 value="{{ old('name', $project->name) }}" placeholder="Nome Progetto">
                         </div>
                         <div class="col-12 py-3">
-                            <label for="" class="control-label">Foto Progetto</label>
+                            <label for="" class="control-label">Foto del progetto</label>
                             <input type="file" name="project_image" id="project_image">
                             @if ($project->project_image)
                                 <div class="mt-2">
                                     <img src="{{ filter_var($project->project_image, FILTER_VALIDATE_URL) ? $project->project_image : asset('storage/' . $project->project_image) }}"
-                                        alt="Project Image" style="width: 200px;">
+                                        alt="Project Image" style="width: 150px;">
                                 </div>
                             @else
                                 <div class="mt-2">
@@ -40,7 +40,7 @@
                             @endif
                         </div>
                         <div class="col-12">
-                            <label for="" class="control-label">Descrizione Progetto</label>
+                            <label for="" class="control-label">Descrizione del progetto</label>
                             <textarea name="description" id="" cols="30" rows="10" class="form-control form-control-sm">{{ old('description', $project->description) }}</textarea>
                         </div>
 
